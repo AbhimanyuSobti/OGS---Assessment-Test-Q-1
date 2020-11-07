@@ -88,7 +88,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,77.1666666666667 300,107.166666666667 101.666666666667,107.166666666667 101.666666666667,139.333333333333</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This state creates an array list which stores the information related to each PDF file available into the Input folder" DisplayName="State-0" sap:VirtualizedContainerService.HintSize="527.333333333333,1615.33333333333" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This state creates an array list which stores the information related to each PDF file available into the Input folder" DisplayName="State-0" sap:VirtualizedContainerService.HintSize="197.333333333333,140" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <Sequence sap:VirtualizedContainerService.HintSize="480.666666666667,1142" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
@@ -250,21 +250,11 @@
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Error" Message="[&quot;The bot has reached to the final state due to some error&quot;]" />
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Outlook_ Send Email Notification workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Outlook_ Send Email Notification.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailTo" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailCc" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">
-                              <Literal x:TypeArguments="x:String">PDF Extraction Failure</Literal>
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;The bot has faced some error while processing the invoices. Please contact support team to understand more about the issue.&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;&quot;,Now.ToShortDateString)" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExtractedFilePath" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">[StrEmailTo]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">[StrEmailCc]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">PDF Extraction Failure</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">[String.Format("&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;The bot has faced some error while processing the invoices. Please contact support team to understand more about the issue.&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;",Now.ToShortDateString)]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">[StrExtractedFilePath]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -281,21 +271,11 @@
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;There is no file available into the input folder for processing&quot;]" />
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Outlook_ Send Email Notification workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Outlook_ Send Email Notification.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailTo" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailCc" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">
-                                  <Literal x:TypeArguments="x:String">PDF Extraction Success-0 PDF</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;There is no PDF files available into the Input folder&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;&quot;,Now.ToShortDateString)" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExtractedFilePath" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">[StrEmailTo]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">[StrEmailCc]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">PDF Extraction Success-0 PDF</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">[String.Format("&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;There is no PDF files available into the Input folder&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;",Now.ToShortDateString)]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">[StrExtractedFilePath]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </Sequence>
@@ -303,21 +283,11 @@
                         <If.Else>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Outlook_ Send Email Notification workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Outlook_ Send Email Notification.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailTo" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrEmailCc" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">
-                                <Literal x:TypeArguments="x:String">PDF Extraction Success</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;The bot has &lt;strong&gt;successfully&lt;/strong&gt;&lt;/span&gt; processed the {1} invoices. Please find attached report of it.&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;&quot;,Now.ToShortDateString,ListFilesPath.Count)" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExtractedFilePath" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailTo">[StrEmailTo]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCc">[StrEmailCc]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailSubject">PDF Extraction Success</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMailBody">[String.Format("&lt;p&gt;Hello Team,&lt;/p&gt;&lt;p&gt;Processing Date: {0}&lt;/p&gt;&lt;p&gt;The bot has &lt;strong&gt;successfully&lt;/strong&gt;&lt;/span&gt; processed the {1} invoices. Please find attached report of it.&lt;/p&gt;&lt;p&gt;This is system generated email. Please do not reply to it.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Thanks,&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;RPA Bot&lt;/strong&gt;&lt;/p&gt;",Now.ToShortDateString,ListFilesPath.Count)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrAttachPath">[StrExtractedFilePath]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </If.Else>
@@ -402,7 +372,7 @@
                               <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:BuildDataTable DataTable="[DtPdfExtracted]" DisplayName="Build Data Table- Extracted Data" sap:VirtualizedContainerService.HintSize="454.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company_x0027_s_x0020_Email_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company_x0027_s_x0020_Phone_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                          <ui:BuildDataTable DataTable="[DtPdfExtracted]" DisplayName="Build Data Table- Extracted Data" sap:VirtualizedContainerService.HintSize="454.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Company_x0027_s_x0020_Email_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Company_x0027_s_x0020_Phone_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
                           <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Files" sap:VirtualizedContainerService.HintSize="454.666666666667,739.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[ListFilesPath]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
@@ -518,7 +488,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="In this state, the bot will create an excel file, file it with the extracted data." DisplayName="State-2" sap:VirtualizedContainerService.HintSize="218.666666666667,154" sap2010:WorkflowViewState.IdRef="State_4">
+                      <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="In this state, the bot will create an excel file, file it with the extracted data." DisplayName="State-2" sap:VirtualizedContainerService.HintSize="653.333333333333,1751.33333333333" sap2010:WorkflowViewState.IdRef="State_4">
                         <State.Entry>
                           <Sequence sap:VirtualizedContainerService.HintSize="606.666666666667,1351.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
@@ -544,7 +514,7 @@
                                   <ui:PathExists DisplayName="Path Exists Output Folder" Exists="[BoolFolderExist]" sap:VirtualizedContainerService.HintSize="484,90.6666666666667" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[IO.Directory.GetCurrentDirectory+&quot;/02_Output&quot;]" PathType="Folder" />
                                   <If Condition="[BoolFolderExist]" DisplayName="If- Folder Exist" sap:VirtualizedContainerService.HintSize="484,234.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
                                     <If.Else>
-                                      <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[IO.Directory.GetCurrentDirectory+&quot;/02_Output&quot;]" />
+                                      <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[IO.Directory.GetCurrentDirectory+&quot;\02_Output&quot;]" />
                                     </If.Else>
                                   </If>
                                   <Assign DisplayName="Assign- File Path" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_6">
